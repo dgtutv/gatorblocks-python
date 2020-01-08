@@ -22,15 +22,15 @@ masterlist = [day1,day2,day3,day4,day5,day6,day7,day8]
 #176, days in school year
 #120 between start end year
 #421 in my sceduale
+w=0
+day_off =[]
+for offDay in dayOff:#from list of days off in day of year format, converts to day of school year    
+    if dayOff[w] >246:
+        day_off += [dayOff[w]-247]
+    else:
+        day_off += [dayOff[w]+120]
+    w+=1
 def before():
-    w=0
-    day_off =[]
-    for offDay in dayOff:#from list of days off in day of year format, converts to day of school year         
-        if dayOff[w] >246:
-            day_off += [dayOff[w]-247]
-        else:
-            day_off += [dayOff[w]+120]
-        w+=1
     dayOfYear=day_of_year-247#converts current day to day of school year
     rotation =1
     b=0#a counter for total days that have been ran through the loop
@@ -56,15 +56,6 @@ def before():
                 print(p)
     
 def after():
-    w=0
-    day_off =[]
-    for offDay in dayOff:#from list of days off in day of year format, converts to day of school year 
-        
-        if dayOff[w] >246:
-            day_off += [dayOff[w]-247]
-        else:
-            day_off += [dayOff[w]+120]
-        w+=1
     dayOfYear=day_of_year+120#converts current day to day of school year
     rotation =-1
     b=-1#a counter for total days that have been ran through the loop
