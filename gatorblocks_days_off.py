@@ -1,4 +1,5 @@
 #Please enter all days off school in day of year format, in this list
+#All algorithms will call this temporary list for skipping days off school
 #DO NOT INCLUDE WEEKENDS!!
 #spt20
 #oct14
