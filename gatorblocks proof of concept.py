@@ -18,10 +18,10 @@ day7 = [3,2,1,0]
 day8 = [7,6,5,4]
 weekDay = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 masterlist = [day1,day2,day3,day4,day5,day6,day7,day8]
-#247, first day of scool
+#247, first day of school
 #176, days in school year
-#120 between start end year
-#421 in my sceduale
+#120 days between start and end of school year
+#421 is the number of days in my sceduale
 w=0
 day_off =[]
 for offDay in dayOff:#from list of days off in day of year format, converts to day of school year    
@@ -48,12 +48,7 @@ def before():
         dayz = (b%8)-1
         x = masterlist[dayz] 
         if day== dayOfYear:
-            print(weekDay[week])
-            print()
-            for i in range(4):
-                y = x[i]
-                p = classes[y]
-                print(p)
+            return x
     
 def after():
     dayOfYear=day_of_year+120#converts current day to day of school year
@@ -73,16 +68,19 @@ def after():
         dayz = (b%8)-1
         x = masterlist[dayz] 
         if day== dayOfYear:
-            print(weekDay[week])
-            print()
-            for i in range(4):
-                y = x[i]
-                p = classes[y]
-                print(p)
+            return x
+
 #used for testing
+print(weekDay[week])
+print()
 if day_of_year>=246:
-    before()
+    x = before()
 else:
-    after()
+    x = after()
+for i in range(4):
+    y = x[i]
+    p = classes[y]
+    print(p)
+    
     
     
