@@ -2,9 +2,11 @@
 ##run this file 
 import datetime
 import calendar
+import json
 from datetime import datetime
-from gatorblocksclasses import classes
 from gatorblocks_days_off import dayOff
+with open('classes.txt', 'r') as filehandle:
+    classes = json.load(filehandle)
 day_of_year = datetime.now().timetuple().tm_yday#day of year from date
 now = datetime.now()#current date
 week = calendar.weekday(now.year, now.month, now.day)#get day of week
@@ -18,10 +20,10 @@ day7 = [3,2,1,0]
 day8 = [7,6,5,4]
 weekDay = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 masterlist = [day1,day2,day3,day4,day5,day6,day7,day8]
-#247, first day of school
+#247, first day of scool
 #176, days in school year
-#120 days between start and end of school year
-#421 is the number of days in my sceduale
+#120 between start end year
+#421 in my sceduale
 w=0
 day_off =[]
 for offDay in dayOff:#from list of days off in day of year format, converts to day of school year    
@@ -81,6 +83,7 @@ for i in range(4):
     y = x[i]
     p = classes[y]
     print(p)
+
     
     
     
