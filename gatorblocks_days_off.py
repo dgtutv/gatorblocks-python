@@ -1,5 +1,6 @@
+import json
+import datetime
 #Please enter all days off school in day of year format, in this list
-#All algorithms will call this temporary list for skipping days off school
 #DO NOT INCLUDE WEEKENDS!!
 #spt20
 #oct14
@@ -33,4 +34,18 @@
 #apr13
 #may15
 #may18
-dayOff=[263,287,298,312,315,329,357,358,359,360,361,364,365,1,2,3,45,48,55,76,77,78,79,80,83,84,85,86,87,101,104,136,139]
+print("Please enter all days off school in day, month, year, format,DO NOT INCLUDE WEEKENDS!! Enter nothing to indicate all dates have been entered, enter anything to continue.")
+dayOff = []
+while True:
+    if input()=="":
+        break
+    else:
+        year= int(input('Year: '))
+        month= int(input('Month: '))
+        day= int(input('Day: '))
+        date1=datetime.date(year, month, day)
+        day_of_year = date1.timetuple().tm_yday
+        dayOff+=[day_of_year]    
+with open('days_off.txt', 'w') as filehandle:
+    json.dump(dayOff, filehandle)
+
