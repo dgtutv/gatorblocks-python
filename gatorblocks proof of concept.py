@@ -4,7 +4,8 @@ import datetime
 import calendar
 import json
 from datetime import datetime
-from gatorblocks_days_off import dayOff
+with open('days_off.txt', 'r') as filehandle:
+    dayOff=json.load(filehandle)
 with open('classes.txt', 'r') as filehandle:
     classes = json.load(filehandle)
 day_of_year = datetime.now().timetuple().tm_yday#day of year from date
@@ -83,6 +84,7 @@ for i in range(4):
     y = x[i]
     p = classes[y]
     print(p)
+
 
     
     
