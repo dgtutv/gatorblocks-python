@@ -12,6 +12,8 @@ with open('referenceBegin.txt', 'r') as filehandle:
     begin = json.load(filehandle)
 with open('referenceEnd.txt', 'r') as filehandle:
     end = json.load(filehandle)
+with open('referenceFinal.txt', 'r') as filehandle:
+    Final = json.load(filehandle)
 end = (365-begin)+end
 day_of_year = datetime.now().timetuple().tm_yday#day of year from date
 now = datetime.now()#current date
@@ -42,7 +44,7 @@ def before():
     dayOfYear=day_of_year-int(begin) #converts current day to day of school year
     rotation =1
     b=0#a counter for total days that have been ran through the loop
-    for day in range(421):
+    for day in range(365):
         rotation+=1
         if rotation ==-1:
             continue
@@ -57,12 +59,13 @@ def before():
         x = masterlist[dayz] 
         if day== dayOfYear:
             return x
+            break
     
 def after():
     dayOfYear=day_of_year+end#converts current day to day of school year
     rotation =-1
     b=-1#a counter for total days that have been ran through the loop
-    for day in range(421):
+    for day in range(365):
         rotation+=1
         if rotation ==-1:
             continue
@@ -77,20 +80,39 @@ def after():
         x = masterlist[dayz] 
         if day== dayOfYear:
             return x
+            break
 
 print(weekDay[week])
 print()
-if day_of_year>=(begin-1):
-    x = before()
+if day_of_year>=Final:
+    if now.weekday()<5:        
+        p =day_of_year-Final
+    else:
+        p=5
+    if p==0:
+        print(classes[day1[0]])
+        print(classes[day1[1]])
+    elif p==1:
+        print(classes[day1[2]])
+        print(classes[day1[3]])
+    elif p==2:
+        print(classes[day2[0]])
+        print(classes[day2[1]])
+    elif p==3:
+        print(classes[day2[2]])
+        print(classes[day2[3]])
 else:
-    x = after()
-for i in range(4):
-    y = x[i]
-    p = classes[y]
-    print(p)
-print()
+    if day_of_year>=(begin-1):
+        x = before()
+    else:
+        x = after()
+    for i in range(4):
+        y = x[i]
+        p = classes[y]
+        print(p)
+    print()
 input("Press ENTER to end program")
-    
+     
  
 
 
