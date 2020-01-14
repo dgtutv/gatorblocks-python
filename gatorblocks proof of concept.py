@@ -88,6 +88,10 @@ for i in range(4):
     y = x[i]
     p = classes[y]
     print(p)
+print()
+input("Press ENTER to end program")
+    
+ 
 
 
     
