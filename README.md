@@ -3,6 +3,4 @@ This is the gator blocks algorithm, starting with proof of concept in python. I 
 Important points:
 1. The gatorblocks proof of concept is what the user will run
 2. Gatorblocks algorithm is some old code that may come in useful, it is my original script
-3. Gatorblocks classes is a list of the users classes, in future I plan to add a user friendily way to change the classes in this list
-4. Gatorblocks days off lists all of the given days off, excluding summer break and weekends, as the algorithm accounts for it
-5. Help would be much appreciated!!
+3. I am now wrapping up the program with adding the final exam days
