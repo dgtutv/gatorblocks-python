@@ -8,6 +8,11 @@ with open('days_off.txt', 'r') as filehandle:
     dayOff=json.load(filehandle)
 with open('classes.txt', 'r') as filehandle:
     classes = json.load(filehandle)
+with open('referenceBegin.txt', 'r') as filehandle:
+    begin = json.load(filehandle)
+with open('referenceEnd.txt', 'r') as filehandle:
+    end = json.load(filehandle)
+end = (365-begin)+end
 day_of_year = datetime.now().timetuple().tm_yday#day of year from date
 now = datetime.now()#current date
 week = calendar.weekday(now.year, now.month, now.day)#get day of week
@@ -28,13 +33,13 @@ masterlist = [day1,day2,day3,day4,day5,day6,day7,day8]
 w=0
 day_off =[]
 for offDay in dayOff:#from list of days off in day of year format, converts to day of school year    
-    if dayOff[w] >246:
-        day_off += [dayOff[w]-247]
+    if dayOff[w] >=begin:
+        day_off += [dayOff[w]-int(begin)]
     else:
-        day_off += [dayOff[w]+120]
+        day_off += [dayOff[w]+int(end)]
     w+=1
 def before():
-    dayOfYear=day_of_year-247#converts current day to day of school year
+    dayOfYear=day_of_year-int(begin) #converts current day to day of school year
     rotation =1
     b=0#a counter for total days that have been ran through the loop
     for day in range(421):
@@ -54,7 +59,7 @@ def before():
             return x
     
 def after():
-    dayOfYear=day_of_year+120#converts current day to day of school year
+    dayOfYear=day_of_year+end#converts current day to day of school year
     rotation =-1
     b=-1#a counter for total days that have been ran through the loop
     for day in range(421):
@@ -73,10 +78,9 @@ def after():
         if day== dayOfYear:
             return x
 
-#used for testing
 print(weekDay[week])
 print()
-if day_of_year>=246:
+if day_of_year>=(begin-1):
     x = before()
 else:
     x = after()
