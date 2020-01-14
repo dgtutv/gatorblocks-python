@@ -16,7 +16,7 @@ day= int(input('Day: '))
 date1=datetime.date(year, month, day)
 day_of_year = date1.timetuple().tm_yday
 end=day_of_year
-with open('referenceEnd.txt', 'w') as filehandle:
+with open('referenceFinal.txt', 'w') as filehandle:
     json.dump(end, filehandle)
 print("If there is a weekend between the new year and first day of school after the winter break, enter 2. Otherwise enter 0")
 end=int(input())
