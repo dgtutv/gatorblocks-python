@@ -18,7 +18,6 @@ with open('referenceLastDay.txt', 'r') as filehandle:
     LastDay = json.load(filehandle)
 with open('referenceFirstDay.txt', 'r') as filehandle:
     FirstDay = json.load(filehandle)    
-end = (365-begin)+end
 day_of_year = datetime.now().timetuple().tm_yday   #day of year from date
 now = datetime.now()  #current date
 week = calendar.weekday(now.year, now.month, now.day)   #get day of week
