@@ -67,7 +67,7 @@ for day in range(365):      #iterates through every day from the start of school
             y = x[i]
             p = classes[y]
             print(p)
-    break
+
 print()
 input("Press ENTER to end program")     #Windows will not run without this 
 
