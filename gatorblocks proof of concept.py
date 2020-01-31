@@ -34,18 +34,19 @@ masterlist = [day1,day2,day3,day4,day5,day6,day7,day8]     #This list is used fo
 #247, first day of scool
 #176, days in school year
 
-day_of_year=249   #debugging date
+day_of_year=153   #debugging date
 
 w=0     #counter for running through and iterating list of days off
 counter=0     #counter for the number of days running through the main for loop, not including weekends or days off
 if day_of_year<Final-1:  #Final is the dev inputted number that inicates the last day of school
     day_of_year+=365
-day_of_year-=begin      
+day_of_year-=begin
 for offDay in dayOff:    #from list of days off in day of year format, converts to day of school year    
-    if dayOff[w] <Final-1:    
+    if dayOff[w] < Final-1:    
         dayOff[w]+=365    #This is similar to the if statement above, just appplies to a list
-    dayOff[w]-=begin  #begin is a dev inputted first day of block rotation
-rotation=(weekDay.index(FirstDay))
+    dayOff[w]-=begin
+    w+=1
+rotation=(weekDay.index(FirstDay)-1)
 print(weekDay[week])
 print()
 for day in range(365):      #iterates through every day from the start of school until today, this is because we want to use modulo to tell which block rotation should be used
@@ -66,7 +67,6 @@ for day in range(365):      #iterates through every day from the start of school
             y = x[i]
             p = classes[y]
             print(p)
-
 print()
 input("Press ENTER to end program")     #Windows will not run without this 
 
