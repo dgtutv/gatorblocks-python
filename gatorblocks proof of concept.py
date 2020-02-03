@@ -31,11 +31,6 @@ day7 = [3,2,1,0]
 day8 = [7,6,5,4]
 weekDay = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]    #Used for assigning a number to days of the week, mostly useful for determining at which point the block rotations should start
 masterlist = [day1,day2,day3,day4,day5,day6,day7,day8]     #This list is used for rotating through the block rotations
-#247, first day of scool
-#176, days in school year
-
-day_of_year=153   #debugging date
-
 w=0     #counter for running through and iterating list of days off
 counter=0     #counter for the number of days running through the main for loop, not including weekends or days off
 if day_of_year<Final-1:  #Final is the dev inputted number that inicates the last day of school
