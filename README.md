@@ -3,4 +3,4 @@ This is the gator blocks algorithm, starting with proof of concept in python. I 
 Important points:
 1. The gatorblocks proof of concept is what the user will run
 2. Gatorblocks algorithm is some old code that may come in useful, it is my original script
-3. I am now wrapping up the program with adding the final exam days
+
